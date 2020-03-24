@@ -90,13 +90,13 @@ class App extends React.Component {
   constructor(props) {
     super(props);
     const gifs = [
-      `url("http://i.giphy.com/media/ASzK5wWjMtc6A/giphy.gif")`,
-      `url("http://i.giphy.com/media/88iYsvbegSUn9bSTF8/giphy.gif")`,
-      `url("http://i.giphy.com/media/1qB3EwE3c54A/giphy.gif")`,
-      `url("http://i.giphy.com/media/ZUomWFktUWpFu/giphy.gif")`,
-      `url("http://i.giphy.com/media/cYejmY7tuJ4HTmBYHP/giphy.gif")`,
-      `url("http://i.giphy.com/media/mXwxPJjb1SzlhwMHfd/giphy.gif")`,
-      `url("http://i.giphy.com/media/iE3lvCgDR29h10Gh5B/giphy.gif")`,
+      `url("https://i.giphy.com/media/ASzK5wWjMtc6A/giphy.gif")`,
+      `url("https://i.giphy.com/media/88iYsvbegSUn9bSTF8/giphy.gif")`,
+      `url("https://i.giphy.com/media/1qB3EwE3c54A/giphy.gif")`,
+      `url("https://i.giphy.com/media/ZUomWFktUWpFu/giphy.gif")`,
+      `url("https://i.giphy.com/media/cYejmY7tuJ4HTmBYHP/giphy.gif")`,
+      `url("https://i.giphy.com/media/mXwxPJjb1SzlhwMHfd/giphy.gif")`,
+      `url("https://i.giphy.com/media/iE3lvCgDR29h10Gh5B/giphy.gif")`,
     ]
     const rand = Math.round(Math.random() * gifs.length);
     this.state = {
