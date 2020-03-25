@@ -13,19 +13,19 @@ import "./App.css";
 import logo from "./cheese.webp";
 
 function Tip(props) {
-  if (props.osName == "Windows") {
+  if (props.osName === "Windows") {
     return (
       <p>
         For {props.osName}, press <b>Win + L</b>
       </p>
     );
-  } else if (props.osName == "Chromium OS") {
+  } else if (props.osName === "Chromium OS") {
     return (
       <p>
         For {props.osName}, press <b>Search + L</b>
       </p>
     );
-  } else if (props.osName == "Mac OS") {
+  } else if (props.osName === "Mac OS") {
     return (
       <p>
         For {props.osName}, press <b>Command + Control + Q</b>
@@ -35,7 +35,7 @@ function Tip(props) {
         )
       </p>
     );
-  } else if (props.osName == "iOS" || props.osName == "Android") {
+  } else if (props.osName === "iOS" || props.osName === "Android") {
     return (
       <p>
         For {props.osName}, press the <b>Sleep/Wake button</b>.<br />
