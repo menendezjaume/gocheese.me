@@ -6,6 +6,7 @@ import Jumbotron from "react-bootstrap/Jumbotron";
 import { LinkContainer } from "react-router-bootstrap";
 import { MemoryRouter, Switch, Route } from "react-router-dom";
 import { osName } from "react-device-detect";
+import GitHubForkRibbon from "react-github-fork-ribbon";
 
 import "./App.css";
 
@@ -13,15 +14,46 @@ import logo from "./cheese.webp";
 
 function Tip(props) {
   if (props.osName == "Windows") {
-    return <p>For {props.osName}, press <b>Win + L</b></p>;
+    return (
+      <p>
+        For {props.osName}, press <b>Win + L</b>
+      </p>
+    );
   } else if (props.osName == "Chromium OS") {
-    return <p>For {props.osName}, press <b>Search + L</b></p>;
+    return (
+      <p>
+        For {props.osName}, press <b>Search + L</b>
+      </p>
+    );
   } else if (props.osName == "Mac OS") {
-    return <p>For {props.osName}, press <b>Command + Control + Q</b><br/>For older versions of the operating system, press <b>Control + Shift + Power button</b> (or <b>Control + Shift + Eject</b>)</p>;
+    return (
+      <p>
+        For {props.osName}, press <b>Command + Control + Q</b>
+        <br />
+        For older versions of the operating system, press{" "}
+        <b>Control + Shift + Power button</b> (or <b>Control + Shift + Eject</b>
+        )
+      </p>
+    );
   } else if (props.osName == "iOS" || props.osName == "Android") {
-    return <p>For {props.osName}, press the <b>Sleep/Wake button</b>.<br/>In fact, you don’t need to do anything to lock the {props.osName}; it happens automatically, if you don’t touch the screen for one minute (but make sure no one is around for that minute!).</p>;
-  } 
-  return <p>If you don't know how to lock your {props.osName}, search <a href={"https://www.google.com/search?q=how+to+lock+" + props.osName}>how to lock {props.osName}</a> on Google.</p>;
+    return (
+      <p>
+        For {props.osName}, press the <b>Sleep/Wake button</b>.<br />
+        In fact, you don’t need to do anything to lock the {props.osName}; it
+        happens automatically, if you don’t touch the screen for one minute (but
+        make sure no one is around for that minute!).
+      </p>
+    );
+  }
+  return (
+    <p>
+      If you don't know how to lock your {props.osName}, search{" "}
+      <a href={"https://www.google.com/search?q=how+to+lock+" + props.osName}>
+        how to lock {props.osName}
+      </a>{" "}
+      on Google.
+    </p>
+  );
 }
 
 function Cheesed(props) {
@@ -37,7 +69,9 @@ function Cheesed(props) {
         </Button>
       </LinkContainer>
       {/* <Image src="cheese.webp" /> */}
-      <h1 className="cover-heading">Next time, don't forget to lock your machine!</h1>
+      <h1 className="cover-heading">
+        Next time, don't forget to lock your machine!
+      </h1>
       <p className="lead">
         You've been cheesed! Next time, don't forget to lock your machine.
         <hr class="my-4" />
@@ -53,8 +87,9 @@ function Main(props) {
       <Image src={logo} />
       <h1 className="cover-heading">Cheese me!</h1>
       <p className="lead">
-        In order to increase Security Awareness, you are about to cheese someone.
-        Once you press the button below, remember to lock their machine!
+        In order to increase Security Awareness, you are about to cheese
+        someone. Once you press the button below, remember to lock their
+        machine!
       </p>
       <LinkContainer to="/cheesed">
         <Button
@@ -96,8 +131,8 @@ class App extends React.Component {
       `url("https://i.giphy.com/media/ZUomWFktUWpFu/giphy.gif")`,
       `url("https://i.giphy.com/media/cYejmY7tuJ4HTmBYHP/giphy.gif")`,
       `url("https://i.giphy.com/media/mXwxPJjb1SzlhwMHfd/giphy.gif")`,
-      `url("https://i.giphy.com/media/iE3lvCgDR29h10Gh5B/giphy.gif")`,
-    ]
+      `url("https://i.giphy.com/media/iE3lvCgDR29h10Gh5B/giphy.gif")`
+    ];
     const rand = Math.round(Math.random() * gifs.length);
     this.state = {
       gif: gifs[rand],
@@ -119,8 +154,13 @@ class App extends React.Component {
         className="bg text-center"
         style={{ backgroundImage: this.state.show ? this.state.gif : null }}
       >
-        {/* <h2>It is {this.state.gif}.</h2> */}
-
+        <GitHubForkRibbon
+          href="//github.com/menendezjaume/gocheese.me"
+          target="_blank"
+          position="right"
+        >
+          Fork me on GitHub
+        </GitHubForkRibbon>
         <MemoryRouter>
           <Switch>
             <Route path="/cheesed">
