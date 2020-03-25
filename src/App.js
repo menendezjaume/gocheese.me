@@ -72,11 +72,11 @@ function Cheesed(props) {
       <h1 className="cover-heading">
         Next time, don't forget to lock your machine!
       </h1>
-      <p className="lead">
+      <div className="lead">
         You've been cheesed! Next time, don't forget to lock your machine.
-        <hr class="my-4" />
+        <hr className="my-4" />
         <Tip osName={osName} />
-      </p>
+      </div>
     </Jumbotron>
   );
 }
